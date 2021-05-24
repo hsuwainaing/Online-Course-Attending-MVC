@@ -1,0 +1,121 @@
+﻿body {
+    /*float:left;*/
+    /*text-align: center;*/
+    background-image: linear-gradient(180deg,red, yellow);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+label {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:20px;
+    background-color: red; 
+    background-image: linear-gradient(180deg,red, yellow);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+   
+}
+
+.login-button {
+    background-image: linear-gradient(180deg,red, yellow);
+    padding: 10px;
+    /*padding-left:150px;*/
+    border-radius: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.sign-button {
+   
+    /*border-radius: 10px;*/
+}
+h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    background-color: red;
+    /* Create the gradient. */
+    background-image: linear-gradient(180deg,red, yellow);
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.loginimage {
+   
+    float: left;
+    padding-right:20px;
+   
+    /*width: 20%;*/
+    margin: 0% 0 0% 10%;
+
+}
+#email
+{
+    margin-left:50px;
+}
+#password
+{
+    margin-left:17px;
+}
+
+.loginformclass {
+    float: left;
+    /*text-align: center;*/
+    width: 520px;
+    /*height: 450px;*/
+    background: #fff;
+    border-radius: 10px;
+    border: 5px solid #000;
+    /*display: flex;*/
+    justify-content: center;
+    /*overflow: hidden;*/
+    /*display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;*/
+    /*flex-wrap: wrap;
+    justify-content: space-between;*/
+    padding: 20px 30px 30px 15px;
+    margin: 12% 0% 0% 35%;
+}
+.textinput
+{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:20px;
+    line-height:1.5;
+    display:block;
+    height:30px;
+    border-radius:10px;
+}
+.textinput2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.8;
+    /*display: block;*/
+    height: 40px;
+    border-radius: 10px;
+}
+.forgotpwd
+{
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size:20px;
+   margin-left:35%;
+}
+.google-signin {
+    /*padding: 7px;
+    /*padding-left:150px;*/
+    border-radius: 10px;
+   
+}
+.errormessage
+{
+    padding-left: 60px;
+}
