@@ -1,0 +1,23 @@
+//Clong
+git clone https://github.com/HninPhyuPhyuAung-hub/OnlineLearning.git
+
+//To create folder
+mkdir foldername
+
+//To Choose Branch
+git branch
+
+//To Switch Branch
+git checkout Develop(Branch name)
+
+//To Push
+git add . (. means to push all folder)
+git add 'Folder Name
+git commit -m 'Testing'
+git push
+
+//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 
+
+
+//To Pull
+git pull
