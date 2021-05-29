@@ -9,14 +9,15 @@ namespace Onlinecourseattendance.Models
     {
         public int Id { get; set; }
         public int UserID { get; set; }
-        public int PhoneNo { get; set; }
+        public string UserName { get; set; }
+        public string PhoneNo { get; set; }
         public string Address { get; set; }
-
         public string NRICNo { get; set; }
         public string PassportNo { get; set; }
         public string Gender { get; set; }
         public string Country { get; set; }
-        public Boolean IsTeacher { get; set; }
+        public string Subject { get; set; }
+        public string Level { get; set; }
         public DateTime? ProcessingDate { get; set; }
     }
 }

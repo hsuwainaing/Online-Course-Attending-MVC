@@ -122,8 +122,8 @@ C:\Hsu\C#Proj\Online-Course-Attending-MVC\Onlinecourseattendance\Onlinecourseatt
 C:\Hsu\C#Proj\Online-Course-Attending-MVC\Onlinecourseattendance\Onlinecourseattendance\bin\WebMatrix.Data.xml
 C:\Hsu\C#Proj\Online-Course-Attending-MVC\Onlinecourseattendance\Onlinecourseattendance\bin\WebMatrix.WebData.xml
 C:\Hsu\C#Proj\Online-Course-Attending-MVC\Onlinecourseattendance\Onlinecourseattendance\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Hsu\C#Proj\Online-Course-Attending-MVC\Onlinecourseattendance\Onlinecourseattendance\obj\Debug\Onlinecourseattendance.csprojAssemblyReference.cache
 C:\Hsu\C#Proj\Online-Course-Attending-MVC\Onlinecourseattendance\Onlinecourseattendance\obj\Debug\Onlinecourseattendance.csproj.CoreCompileInputs.cache
 C:\Hsu\C#Proj\Online-Course-Attending-MVC\Onlinecourseattendance\Onlinecourseattendance\obj\Debug\Onlinecourseattendance.csproj.CopyComplete
 C:\Hsu\C#Proj\Online-Course-Attending-MVC\Onlinecourseattendance\Onlinecourseattendance\obj\Debug\Onlinecourseattendance.dll
 C:\Hsu\C#Proj\Online-Course-Attending-MVC\Onlinecourseattendance\Onlinecourseattendance\obj\Debug\Onlinecourseattendance.pdb
+C:\Hsu\C#Proj\Online-Course-Attending-MVC\Onlinecourseattendance\Onlinecourseattendance\obj\Debug\Onlinecourseattendance.csprojAssemblyReference.cache

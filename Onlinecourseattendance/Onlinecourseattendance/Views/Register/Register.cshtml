@@ -2,42 +2,140 @@
 @{
     ViewBag.Title = "Register";
 }
-
+<link href="~/Css/stylesheet.css" rel="stylesheet" />
 <h2>Register</h2>
+<style type="text/css">
+    select {
+        box-shadow: 0 0 5px #B0CFE0;
+        border: 1px solid #B0CFE0;
+    }
 
+    button {
+        background-color: cornflowerblue; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
 
-<div class="row justify-content-md-center">
-    <div class="col-md-5">
-        @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+    .form-style-9 {
+        max-width: 450px;
+        background: #FAFAFA;
+        padding: 30px;
+        margin: 50px auto;
+        box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+        border-radius: 10px;
+        border: 6px solid #305A72;
+    }
+
+        .form-style-9 ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+            .form-style-9 ul li {
+                display: block;
+                margin-bottom: 10px;
+                min-height: 35px;
+            }
+
+                .form-style-9 ul li .field-style {
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    padding: 8px;
+                    outline: none;
+                    border: 1px solid #B0CFE0;
+                    -webkit-transition: all 0.30s ease-in-out;
+                    -moz-transition: all 0.30s ease-in-out;
+                    -ms-transition: all 0.30s ease-in-out;
+                    -o-transition: all 0.30s ease-in-out;
+                }
+
+                    .form-style-9 ul li .field-style:focus {
+                        box-shadow: 0 0 5px #B0CFE0;
+                        border: 1px solid #B0CFE0;
+                    }
+
+                .form-style-9 ul li .field-split {
+                    width: 49%;
+                }
+
+                .form-style-9 ul li .field-full {
+                    width: 100%;
+                }
+
+                .form-style-9 ul li input.align-left {
+                    float: left;
+                }
+
+                .form-style-9 ul li input.align-right {
+                    float: right;
+                }
+
+                .form-style-9 ul li textarea {
+                    width: 100%;
+                    height: 100px;
+                }
+
+                .form-style-9 ul li input[type="button"],
+                .form-style-9 ul li input[type="submit"] {
+                    -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+                    -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+                    box-shadow: inset 0px 1px 0px 0px #3985B1;
+                    background-color: #216288;
+                    border: 1px solid #17445E;
+                    display: inline-block;
+                    cursor: pointer;
+                    color: #FFFFFF;
+                    padding: 8px 18px;
+                    text-decoration: none;
+                    font: 12px Arial, Helvetica, sans-serif;
+                }
+
+                    .form-style-9 ul li input[type="button"]:hover,
+                    .form-style-9 ul li input[type="submit"]:hover {
+                        background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+                        background-color: #28739E;
+                    }
+</style>
+
+<div class="registerformclass">
+
+    <div>
+       
+        @using (Html.BeginForm("Register", "Register", FormMethod.Post,new { @class = "form-style-9"}))
         {
             //@Html.ValidationSummary()
             @Html.AntiForgeryToken()
 
             <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Register</div>
-                </div>
+               
                 <div class="card-body">
                     <div class="form-group">
                         @Html.LabelFor(m => m.FirstName)
-                        @Html.TextBoxFor(m => m.FirstName, "", new { @class = "form-control", @placeholder = "First Name" })
+                        @Html.TextBoxFor(m => m.FirstName, "", new { @class = "form-control", @placeholder = "First Name",@required = "required" })
                         @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "badge badge-danger" })
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.MiddleName)
-                        @Html.TextBoxFor(m => m.MiddleName, "", new { @class = "form-control", @placeholder = "Last Name" })
+                        @Html.TextBoxFor(m => m.MiddleName, "", new { @class = "form-control", @placeholder = "Middle Name",@required = "required" })
                         @Html.ValidationMessageFor(m => m.MiddleName, "", new { @class = "badge badge-danger" })
 
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.LastName)
-                        @Html.TextBoxFor(m => m.LastName, "", new { @class = "form-control", @placeholder = "Last Name" })
+                        @Html.TextBoxFor(m => m.LastName, "", new { @class = "form-control", @placeholder = "Last Name", @required = "required" })
                         @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "badge badge-danger" })
 
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Email)
-                        @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", @placeholder = "Email" })
+                        @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", @placeholder = "Email" , @required = "required" })
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge badge-danger" })
                         @if (ViewBag.error != null)
                         {
@@ -46,12 +144,13 @@
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Password)
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password", @required = "required" })
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "badge badge-danger" })
                     </div>
 
                     <div class="form-group">
                         <input type="submit" name="submit" class="btn btn-danger" value="Register" />
+                        <input type="reset" name="submit" class="btn btn-danger" value="Reset" />
                     </div>
                 </div>
             </div>

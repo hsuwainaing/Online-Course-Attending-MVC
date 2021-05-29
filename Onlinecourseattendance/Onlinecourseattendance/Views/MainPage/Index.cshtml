@@ -3,19 +3,22 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <title> Responsive Sidebar Menu  | CodingLab </title>
+    <title> Admin Page </title>
 
     <link href="~/Css/style.css" rel="stylesheet" />
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+@{
+    Layout = null;
+}
 <body>
     <div class="sidebar">
         <div class="logo_content">
             <div class="logo">
                 <i class='bx bxl-c-plus-plus'></i>
-                <div class="logo_name">CodingLab</div>
+                <div class="logo_name">Admin Panel</div>
             </div>
             <i class='bx bx-menu' id="btn"></i>
         </div>
@@ -27,13 +30,20 @@
             </li>
             <li>
                 <a href="#">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Courses</span>
                 </a>
                 <span class="tooltip">Courses</span>
             </li>
             <li>
-                <a href="#">
+                <a href="@Url.Action("UserInfo", "UserInfo")">
                     <i class='bx bx-user'></i>
                     <span class="links_name">UserInfo</span>
                 </a>
@@ -46,13 +56,7 @@
                 </a>
                 <span class="tooltip">Messages</span>
             </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-pie-chart-alt-2'></i>
-                    <span class="links_name">Scores</span>
-                </a>
-                <span class="tooltip">Scores</span>
-            </li>
+           
             <li>
                 <a href="#">
                     <i class='bx bx-folder'></i>
@@ -82,16 +86,14 @@
                 <span class="tooltip">Setting</span>
             </li>
         </ul>
-    
-    </div>
-    <div class="home_content">
-        <div class="text">Welcome!!!</div>
-        <button class="button button1">Courses</button>
-        <button class="button button1">UserInfo</button>
-        <button class="button button1">Marks</button>
 
     </div>
-  
+    <div class="home_content">
+        <div class="text">Dashboard</div>
+
+
+    </div>
+
 
     <script>
         let btn = document.querySelector("#btn");

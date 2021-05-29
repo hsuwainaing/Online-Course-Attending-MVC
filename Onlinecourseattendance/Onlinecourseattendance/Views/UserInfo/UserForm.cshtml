@@ -1,0 +1,253 @@
+﻿@model Onlinecourseattendance.Models.UserInfo
+<style type="text/css">
+    select {
+        box-shadow: 0 0 5px #B0CFE0;
+        border: 1px solid #B0CFE0;
+    }
+
+    button {
+        background-color: cornflowerblue; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .form-style-9 {
+        max-width: 450px;
+        background: #FAFAFA;
+        padding: 30px;
+        margin: 50px auto;
+        box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+        border-radius: 10px;
+        border: 6px solid #305A72;
+    }
+
+        .form-style-9 ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+            .form-style-9 ul li {
+                display: block;
+                margin-bottom: 10px;
+                min-height: 35px;
+            }
+
+                .form-style-9 ul li .field-style {
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    padding: 8px;
+                    outline: none;
+                    border: 1px solid #B0CFE0;
+                    -webkit-transition: all 0.30s ease-in-out;
+                    -moz-transition: all 0.30s ease-in-out;
+                    -ms-transition: all 0.30s ease-in-out;
+                    -o-transition: all 0.30s ease-in-out;
+                }
+
+                    .form-style-9 ul li .field-style:focus {
+                        box-shadow: 0 0 5px #B0CFE0;
+                        border: 1px solid #B0CFE0;
+                    }
+
+                .form-style-9 ul li .field-split {
+                    width: 49%;
+                }
+
+                .form-style-9 ul li .field-full {
+                    width: 100%;
+                }
+
+                .form-style-9 ul li input.align-left {
+                    float: left;
+                }
+
+                .form-style-9 ul li input.align-right {
+                    float: right;
+                }
+
+                .form-style-9 ul li textarea {
+                    width: 100%;
+                    height: 100px;
+                }
+
+                .form-style-9 ul li input[type="button"],
+                .form-style-9 ul li input[type="submit"] {
+                    -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+                    -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+                    box-shadow: inset 0px 1px 0px 0px #3985B1;
+                    background-color: #216288;
+                    border: 1px solid #17445E;
+                    display: inline-block;
+                    cursor: pointer;
+                    color: #FFFFFF;
+                    padding: 8px 18px;
+                    text-decoration: none;
+                    font: 12px Arial, Helvetica, sans-serif;
+                }
+
+                    .form-style-9 ul li input[type="button"]:hover,
+                    .form-style-9 ul li input[type="submit"]:hover {
+                        background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+                        background-color: #28739E;
+                    }
+</style>
+
+<center><h1>User Information</h1></center>
+
+<body style="background-color:antiquewhite">
+    @using (Html.BeginForm("UserForm", "UserInfo", FormMethod.Post, new { @class = "form-style-9" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="modal-body myanmar3font">
+            <div class="panel panel-default bd0">
+                <div class="panel-body">
+                    <div class="form-group col-md-12">
+                       
+                        <input type="hidden" name="UserId" value="@ViewBag.userid" />
+
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>User Name</label>
+                        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>Phone Number</label>
+                        @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control" })
+                    </div>
+                    
+                    <div class="form-group col-md-12">
+                        <label>Address</label>
+                        @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>NRICNo</label>
+                        @Html.TextBoxFor(model => model.NRICNo, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>PassportNo</label>
+                        @Html.TextBoxFor(model => model.PassportNo, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group col-md-12">
+
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label><br>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>Country</label>
+                        @{
+                            var Country = new List<SelectListItem>()
+                                                                                                                                                                    {
+                new SelectListItem {Value = "" , Text = "Select" },
+                new SelectListItem() {Text="Alabama", Value="AlabamaL"},
+        new SelectListItem() { Text="Alaska", Value="Alaska"},
+        new SelectListItem() { Text="Arizona", Value="Arizona"},
+        new SelectListItem() { Text="Arkansas", Value="Arkansas"},
+        new SelectListItem() { Text="California", Value="California"},
+        new SelectListItem() { Text="Colorado", Value="Colorado"},
+        new SelectListItem() { Text="Connecticut", Value="Connecticut"},
+        new SelectListItem() { Text="District of Columbia", Value="District of Columbia"},
+        new SelectListItem() { Text="Delaware", Value="Delaware"},
+        new SelectListItem() { Text="Florida", Value="Florida"},
+        new SelectListItem() { Text="Georgia", Value="Georgia"},
+        new SelectListItem() { Text="Hawaii", Value="Hawaii"},
+        new SelectListItem() { Text="Idaho", Value="Idaho"},
+        new SelectListItem() { Text="Illinois", Value="Illinois"},
+        new SelectListItem() { Text="Indiana", Value="Indiana"},
+        new SelectListItem() { Text="Iowa", Value="Iowa"},
+        new SelectListItem() { Text="Kansas", Value="Kansas"},
+        new SelectListItem() { Text="Kentucky", Value="Kentucky"},
+        new SelectListItem() { Text="Louisiana", Value="LA"},
+        new SelectListItem() { Text="Maine", Value="ME"},
+        new SelectListItem() { Text="Maryland", Value="MD"},
+        new SelectListItem() { Text="Massachusetts", Value="MA"},
+        new SelectListItem() { Text="Michigan", Value="MI"},
+        new SelectListItem() { Text="Minnesota", Value="MN"},
+        new SelectListItem() { Text="Mississippi", Value="MS"},
+        new SelectListItem() { Text="Missouri", Value="MO"},
+        new SelectListItem() { Text="Montana", Value="MT"},
+         new SelectListItem() { Text="Myanmar", Value="Myanmar"},
+        new SelectListItem() { Text="Nebraska", Value="NE"},
+        new SelectListItem() { Text="Nevada", Value="NV"},
+        new SelectListItem() { Text="New Hampshire", Value="NH"},
+        new SelectListItem() { Text="New Jersey", Value="NJ"},
+        new SelectListItem() { Text="New Mexico", Value="NM"},
+        new SelectListItem() { Text="New York", Value="NY"},
+        new SelectListItem() { Text="North Carolina", Value="NC"},
+        new SelectListItem() { Text="North Dakota", Value="ND"},
+        new SelectListItem() { Text="Ohio", Value="OH"},
+        new SelectListItem() { Text="Oklahoma", Value="OK"},
+        new SelectListItem() { Text="Oregon", Value="OR"},
+        new SelectListItem() { Text="Pennsylvania", Value="PA"},
+        new SelectListItem() { Text="Rhode Island", Value="RI"},
+        new SelectListItem() { Text="South Carolina", Value="SC"},
+        new SelectListItem() { Text="South Dakota", Value="SD"},
+        new SelectListItem() { Text="Singapore", Value="Singapore"},
+        new SelectListItem() { Text="Tennessee", Value="TN"},
+        new SelectListItem() { Text="Texas", Value="TX"},
+        new SelectListItem() { Text="Utah", Value="UT"},
+        new SelectListItem() { Text="Vermont", Value="VT"},
+        new SelectListItem() { Text="Virginia", Value="VA"},
+        new SelectListItem() { Text="Washington", Value="WA"},
+        new SelectListItem() { Text="West Virginia", Value="WV"},
+        new SelectListItem() { Text="Wisconsin", Value="WI"},
+        new SelectListItem() { Text="Wyoming", Value="WY"}
+                };
+                        }
+                        @Html.DropDownListFor(model => model.Country, Country, new { @class = "form-control", name = "select" })
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>Subject</label>
+                        @{
+                            var Subject = new List<SelectListItem>()
+                                                                                                                                                                    {
+                new SelectListItem {Value = "" , Text = "Select" },
+                new SelectListItem {Value = "Data Science" , Text = "Data Science" },
+                new SelectListItem {Value = "Python" , Text = "Python" },
+                new SelectListItem {Value = "C#" , Text = "C#" },
+                new SelectListItem {Value = "Html", Text = "Html"},
+                new SelectListItem {Value = "CSS", Text = "CSS"},
+                new SelectListItem {Value = "Linux" , Text = "Linux" },
+                new SelectListItem {Value = ".Net", Text = ".Net"},
+                new SelectListItem {Value = "SQL", Text = "SQL"},
+
+                };
+                        }
+                        @Html.DropDownListFor(model => model.Subject, Subject, new { @class = "form-control", name = "select" })
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>Level</label>
+                        @{
+                            var Level = new List<SelectListItem>()
+                                                                                                                                                                    {
+                new SelectListItem {Value = "" , Text = "Select" },
+                new SelectListItem {Value = "Level1" , Text = "Level1" },
+                new SelectListItem {Value = "Level2" , Text = "Level2" },
+                new SelectListItem {Value = "Level3", Text = "Level3"}
+
+
+                };
+                        }
+                        @Html.DropDownListFor(model => model.Level, Level, new { @class = "form-control", name = "select" })
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="reset" class="btn btn-default" data-dismiss="modal">Reset</button>
+            <button type="submit" class="btn btn-primary btnmain">Save</button>
+        </div>
+    }
+</body>
+

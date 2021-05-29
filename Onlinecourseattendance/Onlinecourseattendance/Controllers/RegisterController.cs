@@ -47,11 +47,11 @@ namespace OnlineLearning.Controllers
 
                     //Encrypt Password
 
-                    //r.Password = OnlineLearning.Models.encryptPassword.textToEncrypt(user.Password);
-                        byte[] b;
-                        b = Convert.FromBase64String(user.Password);
-                        r.Password = System.Text.ASCIIEncoding.ASCII.GetString(b);
-                    
+                    r.Password = Onlinecourseattendance.Models.encryptPassword.textToEncrypt(user.Password);
+                    //byte[] b;
+                    //b = Convert.FromBase64String(user.Password);
+                    //r.Password = System.Text.ASCIIEncoding.ASCII.GetString(b);
+
                     r.Role = "Student";
                     r.ProcessingDate = DateTime.UtcNow;
                     r.LastChanged = DateTime.UtcNow;
@@ -70,7 +70,7 @@ namespace OnlineLearning.Controllers
 
                 }
                 ViewBag.Message = "User Details Saved";
-                return View("Register");
+                return RedirectToAction("Index", "MainPage");
             }
             else
             {
@@ -79,9 +79,40 @@ namespace OnlineLearning.Controllers
             }
         }
 
-      
+        //POST: Create Role
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateRole(int userid, string role)
+        {
+            if (ModelState.IsValid)
+            {
 
-        
+                using (var context = new onlinelearningcontext())
+                {
+                    var data = context.AccountManagerset.FirstOrDefault(x => x.UserId == userid);
+
+                    // Checking if any such record exist 
+                    if (data != null)
+                    {
+                        data.Role = role;
+                        context.SaveChanges();
+
+                        return RedirectToAction("UserInfo", "UserInfo");
+                    }
+                    else
+                    { return View(); }
+                    
+                }
+            }
+            else
+            {
+
+                return View();
+            }
+        }
+       
+     
     }
-
 }
+
+
